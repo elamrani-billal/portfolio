@@ -228,37 +228,36 @@ if (contactForm) {
     });
 }
 
-// Parallax effect for hero section (subtle)
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroContent = document.querySelector('.hero-content');
-    const heroImage = document.querySelector('.hero-image');
-    
-    if (heroContent && scrolled < window.innerHeight) {
-        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-        if (heroImage) {
-            heroImage.style.transform = `translateY(${scrolled * 0.2}px)`;
-        }
-    }
-});
+// Removed parallax effect to prevent layout issues
 
-// Typing effect for hero title (optional)
+// Typing effect for hero title (runs once on page load)
 const heroTitle = document.querySelector('.hero-title');
 if (heroTitle) {
-    const text = heroTitle.textContent;
+    // Save the original text
+    const originalText = heroTitle.textContent;
+    
+    // Clear the text initially
     heroTitle.textContent = '';
-    let i = 0;
+    heroTitle.style.opacity = '1'; // Ensure visibility
+    heroTitle.classList.add('typing'); // Add blinking cursor
+    
+    let charIndex = 0;
     
     function typeWriter() {
-        if (i < text.length) {
-            heroTitle.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 30);
+        if (charIndex < originalText.length) {
+            heroTitle.textContent += originalText.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeWriter, 40); // Speed of typing (40ms per character)
+        } else {
+            // Remove blinking cursor when typing is done
+            setTimeout(() => {
+                heroTitle.classList.remove('typing');
+            }, 500);
         }
     }
     
-    // Start typing effect after a short delay
-    setTimeout(typeWriter, 500);
+    // Start typing effect after hero section is visible
+    setTimeout(typeWriter, 800);
 }
 
 // Cursor follow effect (optional subtle effect)

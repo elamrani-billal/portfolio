@@ -122,31 +122,6 @@ html {
     margin-left: 16px;
 }
 
-.btn-download {
-    background: var(--primary-color);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9375rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-    border: none;
-}
-
-.btn-download:hover {
-    background: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.btn-download i {
-    font-size: 0.875rem;
-}
-
 .lang-toggle {
     background: var(--bg-secondary);
     border: 2px solid var(--border-color);
@@ -279,6 +254,23 @@ html {
     line-height: 1.1;
     margin-bottom: 24px;
     color: var(--text-primary);
+    min-height: 120px; /* Prevent layout shift during typing */
+}
+
+.hero-title.typing::after {
+    content: '|';
+    color: var(--primary-color);
+    animation: blink 0.7s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
 }
 
 .hero-subtitle {
@@ -321,12 +313,19 @@ html {
     background: transparent;
     color: var(--text-primary);
     border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .btn-secondary:hover {
     border-color: var(--primary-color);
     color: var(--primary-color);
     transform: translateY(-2px);
+}
+
+.btn-secondary i {
+    font-size: 0.875rem;
 }
 
 .hero-image {
@@ -450,6 +449,54 @@ html {
 .highlight-text {
     color: var(--primary-color);
     font-weight: 600;
+}
+
+.about-cta {
+    margin-top: 32px;
+    padding: 24px;
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.cta-badge {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.cta-badge i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    background: var(--bg-primary);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.cta-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cta-content strong {
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.cta-content span {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+}
+
+.cta-text {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.9375rem;
+    margin: 0;
 }
 
 /* Projects Section */
@@ -838,17 +885,6 @@ html {
         margin-left: auto;
         margin-right: 16px;
         gap: 8px;
-    }
-
-    .btn-download span {
-        display: none;
-    }
-
-    .btn-download {
-        padding: 10px 12px;
-        width: 40px;
-        height: 40px;
-        justify-content: center;
     }
 
     .lang-toggle {
