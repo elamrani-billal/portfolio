@@ -2,6 +2,8 @@
 
 Portfolio personnel moderne et élégant avec mode sombre/clair, créé pour présenter mes compétences en communication digitale et développement web.
 
+🌐 **[Voir le site en ligne](https://VOTRE-USERNAME.github.io/portfolio/)** *(Remplacez par votre URL)*
+
 ## ✨ Fonctionnalités
 
 - **Mode Sombre/Clair** : Bascule fluide entre les thèmes avec sauvegarde de préférence
