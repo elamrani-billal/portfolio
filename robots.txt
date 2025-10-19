@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elamrani-billal.github.io/portfolio/sitemap.xml
