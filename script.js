@@ -370,6 +370,47 @@ if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
     document.documentElement.style.setProperty('--animation-duration', '0.2s');
 }
 
+// Copy to clipboard functionality
+const copyButtons = document.querySelectorAll('.copy-btn');
+
+copyButtons.forEach(button => {
+    button.addEventListener('click', async () => {
+        const textToCopy = button.getAttribute('data-copy');
+        
+        try {
+            await navigator.clipboard.writeText(textToCopy);
+            
+            // Visual feedback
+            const icon = button.querySelector('i');
+            const originalClass = icon.className;
+            
+            // Change to check icon
+            button.classList.add('copied');
+            icon.className = 'fas fa-check';
+            
+            // Reset after 2 seconds
+            setTimeout(() => {
+                button.classList.remove('copied');
+                icon.className = originalClass;
+            }, 2000);
+            
+        } catch (err) {
+            console.error('Erreur de copie:', err);
+            // Fallback pour les anciens navigateurs
+            const textArea = document.createElement('textarea');
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            // Visual feedback
+            button.classList.add('copied');
+            setTimeout(() => button.classList.remove('copied'), 2000);
+        }
+    });
+});
+
 // Console message for developers
 console.log('%c👋 Hello Developer!', 'font-size: 20px; color: #22d3ee; font-weight: bold;');
 console.log('%cLike what you see? Let\'s work together!', 'font-size: 14px; color: #6b7280;');

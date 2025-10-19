@@ -708,12 +708,50 @@ html {
     gap: 16px;
     margin-bottom: 16px;
     color: var(--text-secondary);
+    position: relative;
 }
 
 .contact-item i {
     color: var(--primary-color);
     width: 20px;
     text-align: center;
+}
+
+.copy-btn {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-left: auto;
+}
+
+.copy-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
+}
+
+.copy-btn.copied {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+.copy-btn.copied i::before {
+    content: "\f00c"; /* Font Awesome check icon */
 }
 
 .social-links {
