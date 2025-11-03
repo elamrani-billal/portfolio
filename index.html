@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#22d3ee">
     
     <!-- SEO Meta Tags -->
     <title>Billal El Amrani | Portfolio - Communication Digitale & Développement Web</title>
@@ -17,14 +18,14 @@
     <meta property="og:url" content="https://elamrani-billal.github.io/portfolio/">
     <meta property="og:title" content="Billal El Amrani | Portfolio - Communication Digitale & Développement Web">
     <meta property="og:description" content="Étudiant en Communication Digitale et Développement Web. Portfolio professionnel - En recherche de stage.">
-    <meta property="og:image" content="https://elamrani-billal.github.io/portfolio/preview.jpg">
+    <meta property="og:image" content="https://elamrani-billal.github.io/portfolio/images/profil/photo2.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://elamrani-billal.github.io/portfolio/">
     <meta property="twitter:title" content="Billal El Amrani | Portfolio - Communication Digitale & Développement Web">
     <meta property="twitter:description" content="Étudiant en Communication Digitale et Développement Web. Portfolio professionnel - En recherche de stage.">
-    <meta property="twitter:image" content="https://elamrani-billal.github.io/portfolio/preview.jpg">
+    <meta property="twitter:image" content="https://elamrani-billal.github.io/portfolio/images/profil/photo2.jpg">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://elamrani-billal.github.io/portfolio/">
@@ -32,9 +33,21 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
+    <!-- Preconnect pour optimiser le chargement des polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preload CSS critique -->
+    <link rel="preload" href="styles.css" as="style">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Font Awesome avec chargement différé -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
@@ -43,8 +56,8 @@
       "@type": "Person",
       "name": "Billal El Amrani",
       "url": "https://elamrani-billal.github.io/portfolio/",
-      "image": "https://elamrani-billal.github.io/portfolio/preview.jpg",
-      "jobTitle": "Étudiant en Communication Digitale & Développement Web",
+      "image": "https://elamrani-billal.github.io/portfolio/images/profil/photo2.jpg",
+      "jobTitle": "Étudiant en Communication Digitale et Développement Web",
       "worksFor": {
         "@type": "Organization",
         "name": "Université Paris Nanterre"
@@ -73,7 +86,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-puzzle-piece"></i>
+                <span class="logo-initials">E.B</span>
                 <span>Billal El Amrani</span>
             </div>
             <ul class="nav-menu">
@@ -85,6 +98,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="#skills" class="nav-link" data-en="Skills" data-fr="Compétences">Compétences</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#certifications" class="nav-link" data-en="Certifications" data-fr="Certifications">Certifications</a>
                 </li>
                 <li class="nav-item">
                     <a href="#contact" class="nav-link" data-en="Contact" data-fr="Contact">Contact</a>
@@ -111,7 +127,7 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-profile-small">
-                    <img src="https://i.pravatar.cc/100?img=12" alt="Billal El Amrani">
+                    <img src="images/profil/photo1.jpg" alt="Billal El Amrani" width="100" height="100">
                 </div>
                 <p class="hero-name">Billal El Amrani</p>
                 <h1 class="hero-title" data-en="Between strategy, design, and digital, I create experiences that make sense." data-fr="Entre stratégie, design et digital, je crée des expériences qui font sens.">
@@ -130,7 +146,7 @@
             </div>
             <div class="hero-image">
                 <div class="profile-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop" alt="Billal El Amrani" class="profile-img">
+                    <img src="images/profil/photo2.jpg" alt="Billal El Amrani" class="profile-img" width="500" height="600" fetchpriority="high">
                     <div class="profile-decoration decoration-1"></div>
                     <div class="profile-decoration decoration-2"></div>
                 </div>
@@ -144,7 +160,7 @@
             <div class="about-content">
                 <div class="about-image">
                     <div class="illustration-container">
-                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400&h=500&fit=crop" alt="Illustration Billal" class="about-illustration">
+                        <img src="images/profil/photo3.jpg" alt="Illustration Billal" class="about-illustration" loading="lazy" width="400" height="500">
                         <div class="illustration-decoration"></div>
                     </div>
                 </div>
@@ -181,9 +197,9 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop" alt="Portfolio Personnel">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop" alt="Portfolio Personnel" loading="lazy" width="600" height="400">
                         <div class="project-overlay">
-                            <a href="https://github.com/elamrani-billal/portfolio" class="project-link" target="_blank">
+                            <a href="https://github.com/elamrani-billal/portfolio" class="project-link" target="_blank" aria-label="Voir le projet Portfolio Personnel sur GitHub">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -201,9 +217,9 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Digital Communication Campaign">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Digital Communication Campaign" loading="lazy" width="600" height="400">
                         <div class="project-overlay">
-                            <a href="#" class="project-link" target="_blank">
+                            <a href="#" class="project-link" aria-label="Voir le projet Campagne Communication Digitale">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -221,9 +237,9 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&h=400&fit=crop" alt="E-commerce Website">
+                        <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&h=400&fit=crop" alt="E-commerce Website" loading="lazy" width="600" height="400">
                         <div class="project-overlay">
-                            <a href="#" class="project-link" target="_blank">
+                            <a href="#" class="project-link" aria-label="Voir le projet Site E-commerce">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -241,9 +257,9 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&h=400&fit=crop" alt="Creative Video Content">
+                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&h=400&fit=crop" alt="Creative Video Content" loading="lazy" width="600" height="400">
                         <div class="project-overlay">
-                            <a href="#" class="project-link" target="_blank">
+                            <a href="#" class="project-link" target="_blank" aria-label="Voir le projet Contenu Vidéo Créatif">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -261,9 +277,9 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&h=400&fit=crop" alt="Digital Event">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&h=400&fit=crop" alt="Digital Event" loading="lazy" width="600" height="400">
                         <div class="project-overlay">
-                            <a href="#" class="project-link" target="_blank">
+                            <a href="#" class="project-link" aria-label="Voir le projet Événement Digital">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -352,6 +368,49 @@
         </div>
     </section>
 
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Certifications" data-fr="Certifications">Certifications</h2>
+                <p class="section-subtitle" data-en="My professional qualifications and certifications" data-fr="Mes qualifications et certifications professionnelles">Mes qualifications et certifications professionnelles</p>
+            </div>
+            
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="images/certification/BAFA-diplome.jpg" alt="Diplôme BAFA" loading="lazy" width="400" height="250">
+                    </div>
+                    <div class="certification-content">
+                        <h3>BAFA</h3>
+                        <p class="certification-full-name" data-en="Youth Leader Training Certificate" data-fr="Brevet d'Aptitude aux Fonctions d'Animateur">Brevet d'Aptitude aux Fonctions d'Animateur</p>
+                        <p class="certification-description" data-en="Official certification to lead and supervise youth activities and summer camps." data-fr="Certification officielle pour encadrer et animer des activités de jeunesse et des colonies de vacances.">Certification officielle pour encadrer et animer des activités de jeunesse et des colonies de vacances.</p>
+                        <div class="certification-status completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-en="Obtained" data-fr="Obtenu">Obtenu</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-image toeic-placeholder">
+                        <i class="fas fa-language"></i>
+                        <span>TOEIC</span>
+                    </div>
+                    <div class="certification-content">
+                        <h3>TOEIC</h3>
+                        <p class="certification-full-name" data-en="Test of English for International Communication" data-fr="Test of English for International Communication">Test of English for International Communication</p>
+                        <p class="certification-description" data-en="English language proficiency test for professional contexts. Currently preparing as an independent candidate." data-fr="Test d'évaluation de la maîtrise de l'anglais dans un contexte professionnel. Actuellement en préparation en candidat libre.">Test d'évaluation de la maîtrise de l'anglais dans un contexte professionnel. Actuellement en préparation en candidat libre.</p>
+                        <div class="certification-status in-progress">
+                            <i class="fas fa-clock"></i>
+                            <span data-en="In Progress - Independent Candidate" data-fr="En cours - Candidat libre">En cours - Candidat libre</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
@@ -395,7 +454,13 @@
                         </a>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" action="https://formsubmit.co/billal.elamrani95130@gmail.com" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="Nouveau message depuis votre portfolio !">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="_honey" style="display:none">
+                    
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Votre nom" data-placeholder-en="Your name" data-placeholder-fr="Votre nom" required>
                     </div>
@@ -431,6 +496,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

@@ -197,34 +197,73 @@ window.addEventListener('scroll', () => {
     lastScrollTop = scrollTop;
 });
 
-// Form submission
+// Form submission avec FormSubmit (AJAX)
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Empêche le rechargement de la page
         
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         
+        // Get form data
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
+        
+        console.log('📧 Formulaire en cours d\'envoi...');
+        console.log('Données du formulaire:', data);
+        console.log('Email de destination: billal.elamrani95130@gmail.com');
+        
         // Show loading state
-        submitBtn.textContent = 'Sending...';
+        submitBtn.textContent = currentLang === 'fr' ? 'Envoi en cours...' : 'Sending...';
         submitBtn.disabled = true;
         submitBtn.style.opacity = '0.7';
         
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-            submitBtn.textContent = '✓ Message Sent!';
-            submitBtn.style.background = '#10b981';
+        try {
+            // Envoyer le formulaire via AJAX à FormSubmit
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
             
-            // Reset form after delay
+            console.log('✅ Réponse reçue:', response.status);
+            
+            if (response.ok) {
+                // Succès - Afficher message de confirmation
+                submitBtn.textContent = currentLang === 'fr' ? '✓ Message envoyé !' : '✓ Message sent!';
+                submitBtn.style.background = '#10b981';
+                console.log('✅ Email envoyé avec succès à billal.elamrani95130@gmail.com');
+                
+                // Réinitialiser le formulaire après 3 secondes
+                setTimeout(() => {
+                    contactForm.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                    submitBtn.style.background = '';
+                }, 3000);
+            } else {
+                throw new Error('Erreur lors de l\'envoi');
+            }
+            
+        } catch (error) {
+            console.error('❌ Erreur lors de l\'envoi:', error);
+            
+            // Afficher message d'erreur
+            submitBtn.textContent = currentLang === 'fr' ? '✗ Erreur d\'envoi' : '✗ Error sending';
+            submitBtn.style.background = '#ef4444';
+            
+            // Réinitialiser après 3 secondes
             setTimeout(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
                 submitBtn.style.opacity = '1';
                 submitBtn.style.background = '';
-                contactForm.reset();
-            }, 2000);
-        }, 1500);
+            }, 3000);
+        }
     });
 }
 
@@ -260,49 +299,49 @@ if (heroTitle) {
     setTimeout(typeWriter, 800);
 }
 
-// Cursor follow effect (optional subtle effect)
-let cursorDot = null;
-if (window.innerWidth > 768) {
-    cursorDot = document.createElement('div');
-    cursorDot.style.cssText = `
-        width: 8px;
-        height: 8px;
-        background: var(--primary-color);
-        border-radius: 50%;
-        position: fixed;
-        pointer-events: none;
-        z-index: 9999;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    `;
-    document.body.appendChild(cursorDot);
+// Cursor follow effect désactivé (curseur personnalisé utilisé via CSS)
+// let cursorDot = null;
+// if (window.innerWidth > 768) {
+//     cursorDot = document.createElement('div');
+//     cursorDot.style.cssText = `
+//         width: 8px;
+//         height: 8px;
+//         background: var(--primary-color);
+//         border-radius: 50%;
+//         position: fixed;
+//         pointer-events: none;
+//         z-index: 9999;
+//         opacity: 0;
+//         transition: opacity 0.3s ease;
+//     `;
+//     document.body.appendChild(cursorDot);
 
-    let mouseX = 0, mouseY = 0;
-    let dotX = 0, dotY = 0;
+//     let mouseX = 0, mouseY = 0;
+//     let dotX = 0, dotY = 0;
 
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        cursorDot.style.opacity = '0.5';
-    });
+//     document.addEventListener('mousemove', (e) => {
+//         mouseX = e.clientX;
+//         mouseY = e.clientY;
+//         cursorDot.style.opacity = '0.5';
+//     });
 
-    function animateCursor() {
-        dotX += (mouseX - dotX) * 0.2;
-        dotY += (mouseY - dotY) * 0.2;
+//     function animateCursor() {
+//         dotX += (mouseX - dotX) * 0.2;
+//         dotY += (mouseY - dotY) * 0.2;
         
-        if (cursorDot) {
-            cursorDot.style.left = dotX + 'px';
-            cursorDot.style.top = dotY + 'px';
-        }
+//         if (cursorDot) {
+//             cursorDot.style.left = dotX + 'px';
+//             cursorDot.style.top = dotY + 'px';
+//         }
         
-        requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
+//         requestAnimationFrame(animateCursor);
+//     }
+//     animateCursor();
 
-    document.addEventListener('mouseleave', () => {
-        if (cursorDot) cursorDot.style.opacity = '0';
-    });
-}
+//     document.addEventListener('mouseleave', () => {
+//         if (cursorDot) cursorDot.style.opacity = '0';
+//     });
+// }
 
 // Add hover effects to buttons
 const buttons = document.querySelectorAll('.btn, .social-link, .project-card');
@@ -352,6 +391,27 @@ projectCards.forEach(card => {
     card.style.transform = 'translateY(30px)';
     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     projectObserver.observe(card);
+});
+
+// Certification cards staggered animation
+const certificationCards = document.querySelectorAll('.certification-card');
+const certificationObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0) scale(1)';
+            }, index * 200);
+            certificationObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+certificationCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(40px) scale(0.95)';
+    card.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    certificationObserver.observe(card);
 });
 
 // Prevent scroll behavior issues
