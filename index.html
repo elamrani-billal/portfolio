@@ -18,14 +18,14 @@
     <meta property="og:url" content="https://elamrani-billal.github.io/portfolio/">
     <meta property="og:title" content="Billal El Amrani | Portfolio - Communication Digitale & Développement Web">
     <meta property="og:description" content="Étudiant en Communication Digitale et Développement Web. Portfolio professionnel - En recherche de stage.">
-    <meta property="og:image" content="https://elamrani-billal.github.io/portfolio/images/profil/photo2.webp">
+    <meta property="og:image" content="https://elamrani-billal.github.io/portfolio/images/profil/photo2-large.webp">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://elamrani-billal.github.io/portfolio/">
     <meta property="twitter:title" content="Billal El Amrani | Portfolio - Communication Digitale & Développement Web">
     <meta property="twitter:description" content="Étudiant en Communication Digitale et Développement Web. Portfolio professionnel - En recherche de stage.">
-    <meta property="twitter:image" content="https://elamrani-billal.github.io/portfolio/images/profil/photo2.webp">
+    <meta property="twitter:image" content="https://elamrani-billal.github.io/portfolio/images/profil/photo2-large.webp">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://elamrani-billal.github.io/portfolio/">
@@ -43,7 +43,8 @@
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     
     <!-- Font Awesome avec chargement différé -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
@@ -56,7 +57,7 @@
       "@type": "Person",
       "name": "Billal El Amrani",
       "url": "https://elamrani-billal.github.io/portfolio/",
-      "image": "https://elamrani-billal.github.io/portfolio/images/profil/photo2.webp",
+      "image": "https://elamrani-billal.github.io/portfolio/images/profil/photo2-large.webp",
       "jobTitle": "Étudiant en Communication Digitale et Développement Web",
       "worksFor": {
         "@type": "Organization",
@@ -127,7 +128,11 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-profile-small">
-                    <img src="images/profil/photo1.webp" alt="Billal El Amrani" width="100" height="100">
+                    <img src="images/profil/photo1-small.webp" 
+                         srcset="images/profil/photo1-small.webp 100w,
+                                 images/profil/photo1-medium.webp 200w"
+                         sizes="(max-width: 768px) 80px, 100px"
+                         alt="Billal El Amrani" width="100" height="185">
                 </div>
                 <p class="hero-name">Billal El Amrani</p>
                 <h1 class="hero-title" data-en="Between strategy, design, and digital, I create experiences that make sense." data-fr="Entre stratégie, design et digital, je crée des expériences qui font sens.">
@@ -146,7 +151,12 @@
             </div>
             <div class="hero-image">
                 <div class="profile-card">
-                    <img src="images/profil/photo2.webp" alt="Billal El Amrani" class="profile-img" width="500" height="600" fetchpriority="high">
+                    <img src="images/profil/photo2-medium.webp" 
+                         srcset="images/profil/photo2-small.webp 400w,
+                                 images/profil/photo2-medium.webp 600w,
+                                 images/profil/photo2-large.webp 800w"
+                         sizes="(max-width: 480px) 300px, (max-width: 768px) 400px, 600px"
+                         alt="Billal El Amrani" class="profile-img" width="600" height="900" fetchpriority="high">
                     <div class="profile-decoration decoration-1"></div>
                     <div class="profile-decoration decoration-2"></div>
                 </div>
@@ -160,7 +170,12 @@
             <div class="about-content">
                 <div class="about-image">
                     <div class="illustration-container">
-                        <img src="images/profil/photo3.webp" alt="Illustration Billal" class="about-illustration" loading="lazy" width="400" height="500">
+                        <img src="images/profil/photo3-medium.webp" 
+                             srcset="images/profil/photo3-small.webp 400w,
+                                     images/profil/photo3-medium.webp 600w,
+                                     images/profil/photo3-large.webp 800w"
+                             sizes="(max-width: 480px) 280px, (max-width: 768px) 400px, 500px"
+                             alt="Illustration Billal" class="about-illustration" loading="lazy" width="600" height="900">
                         <div class="illustration-decoration"></div>
                     </div>
                 </div>
@@ -197,7 +212,7 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop" alt="Portfolio Personnel" loading="lazy" width="600" height="400">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=267&fit=crop&fm=webp&q=80" alt="Portfolio Personnel" loading="lazy" width="400" height="267">
                         <div class="project-overlay">
                             <a href="https://github.com/elamrani-billal/portfolio" class="project-link" target="_blank" aria-label="Voir le projet Portfolio Personnel sur GitHub">
                                 <i class="fas fa-external-link-alt"></i>
@@ -217,7 +232,7 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Digital Communication Campaign" loading="lazy" width="600" height="400">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=267&fit=crop&fm=webp&q=80" alt="Digital Communication Campaign" loading="lazy" width="400" height="267">
                         <div class="project-overlay">
                             <a href="#" class="project-link" aria-label="Voir le projet Campagne Communication Digitale">
                                 <i class="fas fa-external-link-alt"></i>
@@ -237,7 +252,7 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&h=400&fit=crop" alt="E-commerce Website" loading="lazy" width="600" height="400">
+                        <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&h=267&fit=crop&fm=webp&q=80" alt="E-commerce Website" loading="lazy" width="400" height="267">
                         <div class="project-overlay">
                             <a href="#" class="project-link" aria-label="Voir le projet Site E-commerce">
                                 <i class="fas fa-external-link-alt"></i>
@@ -257,7 +272,7 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&h=400&fit=crop" alt="Creative Video Content" loading="lazy" width="600" height="400">
+                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&h=267&fit=crop&fm=webp&q=80" alt="Creative Video Content" loading="lazy" width="400" height="267">
                         <div class="project-overlay">
                             <a href="#" class="project-link" target="_blank" aria-label="Voir le projet Contenu Vidéo Créatif">
                                 <i class="fas fa-external-link-alt"></i>
@@ -277,7 +292,7 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&h=400&fit=crop" alt="Digital Event" loading="lazy" width="600" height="400">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=400&h=267&fit=crop&fm=webp&q=80" alt="Digital Event" loading="lazy" width="400" height="267">
                         <div class="project-overlay">
                             <a href="#" class="project-link" aria-label="Voir le projet Événement Digital">
                                 <i class="fas fa-external-link-alt"></i>
@@ -379,7 +394,11 @@
             <div class="certifications-grid">
                 <div class="certification-card">
                     <div class="certification-image">
-                        <img src="images/certification/BAFA-diplome.webp" alt="Diplôme BAFA" loading="lazy" width="400" height="250">
+                        <img src="images/certification/BAFA-diplome-small.webp" 
+                             srcset="images/certification/BAFA-diplome-small.webp 400w,
+                                     images/certification/BAFA-diplome-medium.webp 600w"
+                             sizes="(max-width: 768px) 300px, 400px"
+                             alt="Diplôme BAFA" loading="lazy" width="400" height="263">
                     </div>
                     <div class="certification-content">
                         <h3>BAFA</h3>
