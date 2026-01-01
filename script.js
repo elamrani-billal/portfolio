@@ -238,7 +238,7 @@ if (contactForm) {
                 console.log('✅ Email envoyé avec succès à billal.elamrani95130@gmail.com');
                 
                 // Réinitialiser le formulaire après 3 secondes
-                setTimeout(() => {
+        setTimeout(() => {
                     contactForm.reset();
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
