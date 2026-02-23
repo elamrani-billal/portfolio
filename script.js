@@ -475,3 +475,214 @@ copyButtons.forEach(button => {
 console.log('%c👋 Hello Developer!', 'font-size: 20px; color: #22d3ee; font-weight: bold;');
 console.log('%cLike what you see? Let\'s work together!', 'font-size: 14px; color: #6b7280;');
 console.log('%cContact: billal.elamrani95130@gmail.com', 'font-size: 14px; color: #22d3ee;');
+
+// ===== PROJECT MODAL =====
+const projectsData = {
+    0: {
+        title: { fr: 'Portfolio Personnel', en: 'Personal Portfolio' },
+        subtitle: { fr: 'Développement Web & Design', en: 'Web Development & Design' },
+        tags: ['HTML/CSS', 'JavaScript', 'Design', 'SEO', 'Performance'],
+        images: ['https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=700&h=467&fit=crop&fm=webp&q=80'],
+        context: {
+            fr: "Projet personnel conçu de A à Z pour présenter mon profil, mes compétences et mes réalisations de manière professionnelle et impactante.",
+            en: "Personal project designed from scratch to present my profile, skills, and achievements in a professional and impactful way."
+        },
+        mission: {
+            fr: "Conception UI/UX complète, développement front-end, intégration du mode sombre/clair, support bilingue FR/EN, animations CSS, optimisation SEO et performance (images WebP, lazy loading, Google Fonts asynchrones).",
+            en: "Full UI/UX design, front-end development, dark/light mode integration, bilingual FR/EN support, CSS animations, SEO and performance optimization (WebP images, lazy loading, async Google Fonts)."
+        },
+        results: {
+            fr: "Site entièrement responsive, score de performance élevé, référencement optimisé et déployé sur GitHub Pages.",
+            en: "Fully responsive site, high performance score, optimized SEO, deployed on GitHub Pages."
+        },
+        link: 'https://github.com/elamrani-billal/portfolio',
+        linkLabel: { fr: 'Voir sur GitHub', en: 'View on GitHub' }
+    },
+    1: {
+        title: { fr: 'Campagne Communication Digitale', en: 'Digital Communication Campaign' },
+        subtitle: { fr: 'Stratégie & Community Management', en: 'Strategy & Community Management' },
+        tags: ['Stratégie', 'Design', 'Réseaux Sociaux', 'Copywriting', 'Canva'],
+        images: ['https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&h=467&fit=crop&fm=webp&q=80'],
+        context: {
+            fr: "Projet universitaire — élaboration d'une stratégie de communication digitale complète pour une marque locale cherchant à développer sa présence en ligne.",
+            en: "Academic project — developing a complete digital communication strategy for a local brand seeking to grow its online presence."
+        },
+        mission: {
+            fr: "Analyse de la cible et du marché, définition des messages clés, création de visuels et de contenus pour les réseaux sociaux (Instagram, LinkedIn), planification éditoriale et mesure des KPIs.",
+            en: "Target and market analysis, definition of key messages, creation of visuals and content for social media (Instagram, LinkedIn), editorial planning and KPI measurement."
+        },
+        results: {
+            fr: "Augmentation significative de la visibilité de la marque, hausse de l'engagement sur les publications et mise en place d'une identité de marque cohérente.",
+            en: "Significant increase in brand visibility, higher post engagement, and establishment of a consistent brand identity."
+        },
+        link: null,
+        linkLabel: null
+    },
+    2: {
+        title: { fr: 'Site E-commerce', en: 'E-commerce Website' },
+        subtitle: { fr: 'WordPress & WooCommerce', en: 'WordPress & WooCommerce' },
+        tags: ['WordPress', 'WooCommerce', 'SEO', 'UX/UI', 'Design'],
+        images: ['https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=700&h=467&fit=crop&fm=webp&q=80'],
+        context: {
+            fr: "Projet de développement web — création d'une boutique en ligne fonctionnelle pour une structure souhaitant commercialiser ses produits directement via internet.",
+            en: "Web development project — creation of a functional online store for an organization wanting to sell its products directly online."
+        },
+        mission: {
+            fr: "Installation et configuration de WordPress et WooCommerce, création d'un design personnalisé en accord avec l'identité visuelle, optimisation SEO on-page et paramétrage des moyens de paiement.",
+            en: "Installation and configuration of WordPress and WooCommerce, creation of a custom design aligned with the visual identity, on-page SEO optimization and payment method configuration."
+        },
+        results: {
+            fr: "Boutique en ligne opérationnelle, navigation intuitive et optimisée pour la conversion, avec une architecture de contenu favorable au référencement naturel.",
+            en: "Fully operational online store, intuitive navigation optimized for conversion, with a content architecture favorable to SEO."
+        },
+        link: null,
+        linkLabel: null
+    },
+    3: {
+        title: { fr: 'Contenu Vidéo Créatif', en: 'Creative Video Content' },
+        subtitle: { fr: 'Production & Montage Vidéo', en: 'Video Production & Editing' },
+        tags: ['Vidéo', 'Montage', 'Motion Design', 'Storytelling', 'Réseaux Sociaux'],
+        images: ['https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=700&h=467&fit=crop&fm=webp&q=80'],
+        context: {
+            fr: "Production de contenus vidéo engageants pour les réseaux sociaux d'une marque, dans le but d'augmenter la portée organique et de fidéliser la communauté.",
+            en: "Production of engaging video content for a brand's social media to increase organic reach and build community loyalty."
+        },
+        mission: {
+            fr: "Conception du scénario et du storyboard, tournage, montage vidéo avec Adobe Premiere Pro, ajout d'animations et d'effets motion design, adaptation des formats pour chaque plateforme (Reels, TikTok, YouTube Shorts).",
+            en: "Script and storyboard conception, filming, video editing with Adobe Premiere Pro, addition of motion design animations and effects, format adaptation for each platform (Reels, TikTok, YouTube Shorts)."
+        },
+        results: {
+            fr: "Contenus engageants avec un taux de visionnage et d'interaction supérieur à la moyenne, contribuant à la croissance de la communauté en ligne.",
+            en: "Engaging content with above-average view and interaction rates, contributing to online community growth."
+        },
+        link: null,
+        linkLabel: null
+    },
+    4: {
+        title: { fr: 'Événement Digital', en: 'Digital Event' },
+        subtitle: { fr: 'Organisation & Communication Événementielle', en: 'Event Organisation & Communication' },
+        tags: ['Événementiel', 'Live', 'Promotion', 'Coordination', 'Communication'],
+        images: ['https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=700&h=467&fit=crop&fm=webp&q=80'],
+        context: {
+            fr: "Organisation d'un événement en ligne (webinaire/conférence digitale) impliquant la coordination de plusieurs intervenants et la gestion de la communication avant, pendant et après l'événement.",
+            en: "Organization of an online event (webinar/digital conference) involving the coordination of multiple speakers and management of communication before, during and after the event."
+        },
+        mission: {
+            fr: "Définition du concept et du programme, création des supports de communication (visuels, emailings, posts réseaux sociaux), coordination logistique des intervenants, animation live et modération des échanges.",
+            en: "Definition of concept and program, creation of communication materials (visuals, emails, social media posts), logistical coordination of speakers, live facilitation and moderation."
+        },
+        results: {
+            fr: "Forte participation du public cible, retours très positifs des intervenants et des participants, et couverture sur les réseaux sociaux dépassant les objectifs fixés.",
+            en: "Strong attendance from the target audience, very positive feedback from speakers and participants, and social media coverage exceeding set goals."
+        },
+        link: null,
+        linkLabel: null
+    },
+    5: {
+        title: { fr: 'Infographies Processus IFFP', en: 'IFFP Process Infographics' },
+        subtitle: { fr: 'Communication Visuelle — Mission réelle', en: 'Visual Communication — Real Mission' },
+        tags: ['Infographie', 'Design', 'Communication Visuelle', 'Canva', 'Processus'],
+        images: [
+            'images/projet/ETAPES PROSPECTION COMMERCIAL.png',
+            "images/projet/ETAPES POUR LE PROCESSUS D'ADMISSION.png",
+            "images/projet/ETAPES PROCESSUS D'ADMISSION PARTIE 2.png",
+            "images/projet/ETAPES Argumentaire entretien préalable visio- Candidat.png"
+        ],
+        context: {
+            fr: "Mission réalisée pour l'IFFP (Institut de Formation de la Formation Professionnelle). L'objectif était de formaliser et de rendre visuels des processus internes complexes pour faciliter la formation et l'onboarding des équipes.",
+            en: "Mission carried out for the IFFP (Professional Training Institute). The goal was to formalize and visualize complex internal processes to facilitate team training and onboarding."
+        },
+        mission: {
+            fr: "Création de 4 infographies visuelles : (1) le processus de prospection commerciale, (2 & 3) les étapes du processus d'admission en deux parties, et (4) l'argumentaire d'entretien préalable en visio-conférence pour les candidats. Travail de mise en page, hiérarchisation de l'information et cohérence graphique.",
+            en: "Creation of 4 visual infographics: (1) the sales prospecting process, (2 & 3) the admission process steps in two parts, and (4) the pre-interview argument guide for video conference candidates. Layout work, information hierarchy, and graphic consistency."
+        },
+        results: {
+            fr: "Des supports de communication interne clairs, professionnels et directement exploitables par les équipes commerciales et pédagogiques de l'IFFP pour structurer leurs démarches.",
+            en: "Clear, professional internal communication materials directly usable by IFFP's sales and educational teams to structure their processes."
+        },
+        link: null,
+        linkLabel: null
+    }
+};
+
+const modalOverlay = document.getElementById('projectModal');
+const modalClose = document.getElementById('modalClose');
+
+function openModal(projectId) {
+    const data = projectsData[projectId];
+    if (!data) return;
+
+    const lang = currentLang || 'fr';
+
+    // Gallery
+    const gallery = document.getElementById('modalGallery');
+    gallery.innerHTML = '';
+    data.images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = data.title[lang];
+        img.loading = 'lazy';
+        gallery.appendChild(img);
+    });
+    gallery.className = 'modal-gallery' + (data.images.length === 1 ? ' single' : '');
+
+    // Text content
+    document.getElementById('modalTitle').textContent = data.title[lang];
+    document.getElementById('modalSubtitle').textContent = data.subtitle[lang];
+    document.getElementById('modalContextText').textContent = data.context[lang];
+    document.getElementById('modalMissionText').textContent = data.mission[lang];
+    document.getElementById('modalResultsText').textContent = data.results[lang];
+
+    // Tags
+    const tagsEl = document.getElementById('modalTags');
+    tagsEl.innerHTML = '';
+    data.tags.forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'tag';
+        span.textContent = tag;
+        tagsEl.appendChild(span);
+    });
+
+    // Link
+    const linkEl = document.getElementById('modalLink');
+    if (data.link) {
+        linkEl.href = data.link;
+        document.getElementById('modalLinkLabel').textContent = data.linkLabel[lang];
+        linkEl.style.display = 'inline-flex';
+    } else {
+        linkEl.style.display = 'none';
+    }
+
+    // Update modal section labels for language
+    document.querySelectorAll('#projectModal [data-en][data-fr]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+    });
+
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Open modal on card click
+document.querySelectorAll('.project-card[data-project-id]').forEach(card => {
+    card.addEventListener('click', () => {
+        openModal(parseInt(card.getAttribute('data-project-id')));
+    });
+});
+
+// Close on button
+modalClose.addEventListener('click', closeModal);
+
+// Close on overlay click
+modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeModal();
+});
+
+// Close on Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
+});
