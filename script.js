@@ -578,6 +578,26 @@ const projectsData = {
         link: null,
         linkLabel: null
     },
+    6: {
+        title: { fr: 'Sensibilité Jeunesse — TikTok', en: 'Sensibilité Jeunesse — TikTok' },
+        subtitle: { fr: 'Community Management & Création de Contenu', en: 'Community Management & Content Creation' },
+        tags: ['TikTok', 'Community Management', 'Storytelling', 'Algorithme', 'Sensibilisation'],
+        images: [],
+        context: {
+            fr: "Projet personnel — création et gestion d'un compte TikTok de sensibilisation destiné à un public jeune. Les vidéos mettaient en scène des scénarios du quotidien pour aborder des sujets de société de manière accessible et engageante.",
+            en: "Personal project — creation and management of a TikTok awareness account aimed at a young audience. Videos staged everyday scenarios to address social topics in an accessible and engaging way."
+        },
+        mission: {
+            fr: "Conception des scénarios, tournage, montage et publication des vidéos de manière régulière. Analyse des statistiques TikTok (taux de complétion, portée, heures de publication optimales) pour ajuster la stratégie de contenu. Maîtrise des codes de la plateforme : hook, rythme de montage, textes à l'écran, sons tendance.",
+            en: "Scenario writing, filming, editing and regular publication of videos. Analysis of TikTok statistics (completion rate, reach, optimal posting times) to adjust the content strategy. Mastery of platform codes: hook, editing pace, on-screen text, trending sounds."
+        },
+        results: {
+            fr: "Jusqu'à 15 000 vues sur les meilleures vidéos, avec une moyenne de 300 à 1 000 vues par publication. Compréhension concrète du fonctionnement de l'algorithme TikTok, de l'importance du hook et de l'optimisation des heures de publication.",
+            en: "Up to 15,000 views on best-performing videos, with an average of 300 to 1,000 views per post. Practical understanding of the TikTok algorithm, the importance of the hook, and posting time optimization."
+        },
+        link: null,
+        linkLabel: null
+    },
     5: {
         title: { fr: 'Infographies Processus IFFP', en: 'IFFP Process Infographics' },
         subtitle: { fr: 'Communication Visuelle — Mission réelle', en: 'Visual Communication — Real Mission' },

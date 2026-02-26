@@ -554,6 +554,32 @@ html {
     overflow: hidden;
 }
 
+.tiktok-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #010101 0%, #1a1a2e 60%, #16213e 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tiktok-placeholder i {
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #ff0050, #00f2ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tiktok-placeholder span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+}
+
 .project-image img {
     width: 100%;
     height: 100%;
