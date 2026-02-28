@@ -598,6 +598,29 @@ const projectsData = {
         link: null,
         linkLabel: null
     },
+    7: {
+        title: { fr: 'Festival Hong Kong — Site WordPress', en: 'Hong Kong Festival — WordPress Site' },
+        subtitle: { fr: 'WordPress & Plugins — Exercice universitaire en binôme', en: 'WordPress & Plugins — University Duo Project' },
+        tags: ['WordPress', 'Plugins', 'Travail en équipe', 'Cahier des charges', 'Université Paris Nanterre'],
+        images: [
+            'images/projet/hong-kong.png',
+            'images/projet/hong-kong2.png'
+        ],
+        context: {
+            fr: "Exercice universitaire réalisé en binôme à l'Université Paris Nanterre. Nous avons reçu un cahier des charges détaillé pour concevoir le site web d'un festival de cinéma hongkongais fictif à Paris : Horizon Hong Kong de Paris.",
+            en: "University exercise completed in duo at Université Paris Nanterre. We received a detailed brief to design the website of a fictional Hong Kong film festival in Paris: Horizon Hong Kong de Paris."
+        },
+        mission: {
+            fr: "Création complète du site WordPress en respectant scrupuleusement le cahier des charges : intégration du thème, configuration des plugins, création des pages (Accueil, À propos, Programmation, Galerie), mise en place de la navigation, des boutons d'action et de la charte graphique imposée (rouge bordeaux, jaune or).",
+            en: "Complete creation of the WordPress site strictly following the brief: theme integration, plugin configuration, page creation (Home, About, Programme, Gallery), navigation setup, action buttons, and the imposed visual identity (burgundy red, golden yellow)."
+        },
+        results: {
+            fr: "Site livré conforme au cahier des charges, avec une navigation claire, un design cohérent à la charte graphique et un contenu organisé autour des sections clés du festival.",
+            en: "Site delivered in line with the brief, with clear navigation, a design consistent with the visual guidelines, and content organized around the festival's key sections."
+        },
+        link: 'https://gcw.parisnanterre.fr/l32025/gp2/',
+        linkLabel: { fr: 'Voir le site', en: 'View the site' }
+    },
     5: {
         title: { fr: 'Infographies Processus IFFP', en: 'IFFP Process Infographics' },
         subtitle: { fr: 'Communication Visuelle — Mission réelle', en: 'Visual Communication — Real Mission' },
